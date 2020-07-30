@@ -1,0 +1,41 @@
+﻿<Window x:Class="SfDataGridDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:local="clr-namespace:SfDataGridDemo"
+        Title="SfDataGrid Demo"
+        Width="970"
+        Height="310"
+        Icon="App.ico"
+        WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:ViewModel/> 
+    </Window.DataContext>
+ 
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="120"/>
+        </Grid.ColumnDefinitions>
+        <syncfusion:SfDataGrid x:Name="sfDataGrid" 
+                               ColumnSizer="Star"
+                               AllowEditing="True"
+                               SelectionMode="Single"
+                               NavigationMode="Cell"
+                               ItemsSource="{Binding Orders}"
+                               AutoGenerateColumns="False">
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridTextColumn HeaderText="Order ID" MappingName="OrderID"/>
+                <syncfusion:GridTextColumn HeaderText="Customer ID" MappingName="CustomerID" />
+                <syncfusion:GridTextColumn HeaderText="Customer Name" MappingName="CustomerName" />
+                <syncfusion:GridTextColumn HeaderText="Country" MappingName="Country" />
+                <syncfusion:GridCurrencyColumn HeaderText="Unit Price" MappingName="UnitPrice"/>
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+        <StackPanel Grid.Column="1">
+            <Button  Content="Validate Cell Value"  Width="110" Height="40"
+                     Command="{Binding Path=DataContext.RowDataCommand,ElementName=sfDataGrid}" 
+                     CommandParameter="{Binding ElementName=sfDataGrid}"/>
+        </StackPanel>
+    </Grid>
+</Window>
