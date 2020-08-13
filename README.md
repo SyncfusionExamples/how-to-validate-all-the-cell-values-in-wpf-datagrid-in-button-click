@@ -3,7 +3,8 @@
 ## About the sample
 This example illustrates how to validate all the cell values in WPF DataGrid (SfDataGrid) in button click? 
 
-You can validate the cell value via button click by using [ICommand](https://docs.microsoft.com/en-us/dotnet/api/system.windows.input.icommand) interface and pass the Command parameter element as [SfDataGrid](https://help.syncfusion.com/cr/cref_files/wpf/Syncfusion.SfGrid.WPF~Syncfusion.UI.Xaml.Grid.SfDataGrid.html). Customize the cell validating condition based in CanExecute method.
+
+By default, validation is occurring during end edit of the cell. You can validate the cell value in button click by using [ICommand](https://docs.microsoft.com/en-us/dotnet/api/system.windows.input.icommand) interface.
 
 ```XML
 <syncfusion:SfDataGrid x:Name="sfDataGrid" 
