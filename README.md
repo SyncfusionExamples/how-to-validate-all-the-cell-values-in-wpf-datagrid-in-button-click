@@ -61,6 +61,8 @@ public void ChangeCanExecute(object obj)
 
 ![Cell Validation applied in SfDataGrid](CellValidation.gif)
 
+KB article - [How to validate all the cell values in WPF DataGrid (SfDataGrid) in button click?](https://www.syncfusion.com/kb/11878/how-to-validate-all-the-cell-values-in-wpf-datagrid-sfdatagrid-in-button-click)
+
 ## Requirements to run the demo
 Visual Studio 2015 and above versions
 
